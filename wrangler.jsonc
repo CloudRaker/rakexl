@@ -1,5 +1,6 @@
 {
   "name": "rakexl-docs",
+  "main": "worker.ts",
   "compatibility_date": "2025-01-01",
   "routes": [
     {
@@ -8,6 +9,7 @@
     }
   ],
   "assets": {
-    "directory": "docs/.vitepress/dist"
+    "directory": "docs/.vitepress/dist",
+    "binding": "ASSETS"
   }
 }
