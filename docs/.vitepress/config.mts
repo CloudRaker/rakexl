@@ -1,3 +1,4 @@
+import path from "node:path";
 import { defineConfig } from "vitepress";
 
 // Auto-generated sidebar for the /reference/ section
@@ -20,17 +21,33 @@ export default defineConfig({
     ],
   ],
 
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^@cloudraker\/rakexl\/monaco\/register-language$/,
+          replacement: path.resolve(
+            __dirname,
+            "../../src/monaco/register-language.ts",
+          ),
+        },
+        {
+          find: /^@cloudraker\/rakexl$/,
+          replacement: path.resolve(__dirname, "../../src/index.ts"),
+        },
+      ],
+    },
+    ssr: { noExternal: ["monaco-editor"] },
+    worker: { format: "es" as const },
+  },
+
   themeConfig: {
     nav: [
       { text: "Guide", link: "/introduction" },
       { text: "Language", link: "/language/" },
       { text: "Reference", link: "/reference/" },
       { text: "Usage", link: "/usage/" },
-      {
-        text: "Playground",
-        link: "https://jexl-playground.konnektr.io/",
-        target: "_blank",
-      },
+      { text: "Playground", link: "/playground" },
     ],
 
     sidebar: {
