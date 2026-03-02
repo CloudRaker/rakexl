@@ -1,0 +1,4 @@
+{
+  "entryPoints": ["./src/grammar/index.ts"],
+  "json": "./docs/typedoc.json"
+}

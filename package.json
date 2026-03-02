@@ -1,0 +1,85 @@
+{
+  "name": "@cloudraker/rakexl",
+  "version": "1.4.2",
+  "description": "Rakexl - An opinionated extended grammar for Javascript Expression Language (JEXL)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "readme": "README.md",
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "scripts": {
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "build": "tsc -p tsconfig.release.json",
+    "docs:typedoc": "typedoc --json ./docs/typedoc.json --entryPoints ./src/grammar/index.ts",
+    "docs:completion": "tsx ./completion-docs.ts",
+    "docs:json": "tsx ./docs.ts",
+    "docs:md": "tsx ./generate-mdx-docs.ts",
+    "docs:md:clean": "tsx ./mdx-utils.ts clean",
+    "docs:md:validate": "tsx ./mdx-utils.ts validate",
+    "docs:md:stats": "tsx ./mdx-utils.ts stats",
+    "docs:generate": "npm run docs:typedoc && npm run docs:completion && npm run build && npm run docs:json && npm run docs:md",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [
+    "JSON",
+    "expression",
+    "evaluator",
+    "parser",
+    "target",
+    "context",
+    "jexl",
+    "filter",
+    "selector"
+  ],
+  "author": "Niko Raes <niko.raes@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudraker/rakexl.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "monaco-editor": ">=0.40.0"
+  },
+  "peerDependenciesMeta": {
+    "monaco-editor": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "jexl": "^2.3.0",
+    "uuid": "^13.0.0",
+    "windows-iana": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.5.0",
+    "@types/jexl": "^2.3.4",
+    "@types/node": "^24.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "eslint": "^9.5.0",
+    "eslint-plugin-n": "^17.9.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "globals": "^16.3.0",
+    "tsx": "^4.21.0",
+    "typedoc": "^0.28.9",
+    "typescript": "^5.5.2",
+    "typescript-eslint": "^8.44.0",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitepress": "^1.6.4",
+    "vitest": "^3.2.4"
+  }
+}
