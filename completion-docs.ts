@@ -1,6 +1,7 @@
 import jexl from './src'
-import typedoc from './docs/typedoc.json'
 import fs from 'fs'
+
+const typedoc = JSON.parse(fs.readFileSync('./docs/typedoc.json', 'utf-8'))
 import { GrammarType } from './src'
 
 interface Grammar {

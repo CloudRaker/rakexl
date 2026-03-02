@@ -6,7 +6,7 @@ import {
   completionDocs,
   CompletionDocItem,
 } from "./src/monaco/completion-docs.generated";
-import typedocData from "./docs/typedoc.json";
+const typedocData = JSON.parse(fs.readFileSync("./docs/typedoc.json", "utf-8"));
 
 // Define category descriptions (we still need these for metadata)
 const CATEGORY_DESCRIPTIONS: Record<string, string> = {
