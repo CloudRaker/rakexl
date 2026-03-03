@@ -15,8 +15,10 @@ import {
   base64Encode,
   camelCase,
   ceil,
+  ceilTo,
   contains,
   floor,
+  floorTo,
   formatBase,
   formatInteger,
   formatNumber,
@@ -32,6 +34,7 @@ import {
   randomNumber,
   replace,
   round,
+  roundTo,
   split,
   sqrt,
   sum,
@@ -205,14 +208,26 @@ export class Rakexl extends Jexl {
     this.addFunction("floor", floor);
     this.addFunction("$floor", floor);
     this.addTransform("floor", floor);
+    // FloorTo
+    this.addFunction("floorTo", floorTo);
+    this.addFunction("$floorTo", floorTo);
+    this.addTransform("floorTo", floorTo);
     // Ceil
     this.addFunction("ceil", ceil);
     this.addFunction("$ceil", ceil);
     this.addTransform("ceil", ceil);
+    // CeilTo
+    this.addFunction("ceilTo", ceilTo);
+    this.addFunction("$ceilTo", ceilTo);
+    this.addTransform("ceilTo", ceilTo);
     // Round
     this.addFunction("round", round);
     this.addFunction("$round", round);
     this.addTransform("round", round);
+    // RoundTo
+    this.addFunction("roundTo", roundTo);
+    this.addFunction("$roundTo", roundTo);
+    this.addTransform("roundTo", roundTo);
     // Power
     this.addFunction("power", power);
     this.addFunction("$power", power);

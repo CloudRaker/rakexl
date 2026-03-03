@@ -74,6 +74,63 @@ export const round = (input: unknown, decimals?: number) => {
 };
 
 /**
+ * Rounds a number to the nearest multiple of a given step.
+ *
+ * @example
+ * roundTo(14, 5) // 15
+ * (22)|roundTo(5) // 20
+ * roundTo(0.7, 0.25) // 0.75
+ * @group Math
+ *
+ * @param input The input number to round.
+ * @param step The multiple to round to.
+ * @returns The nearest multiple of step, or NaN if input cannot be converted to a number.
+ */
+export const roundTo = (input: unknown, step: number) => {
+  const num = toNumber(input);
+  if (isNaN(num) || !step) return NaN;
+  return Math.round(num / step) * step;
+};
+
+/**
+ * Rounds a number down to the nearest multiple of a given step.
+ *
+ * @example
+ * floorTo(14, 5) // 10
+ * (22)|floorTo(5) // 20
+ * floorTo(0.7, 0.25) // 0.5
+ * @group Math
+ *
+ * @param input The input number to round down.
+ * @param step The multiple to round down to.
+ * @returns The largest multiple of step less than or equal to input, or NaN if input cannot be converted to a number.
+ */
+export const floorTo = (input: unknown, step: number) => {
+  const num = toNumber(input);
+  if (isNaN(num) || !step) return NaN;
+  return Math.floor(num / step) * step;
+};
+
+/**
+ * Rounds a number up to the nearest multiple of a given step.
+ *
+ * @example
+ * ceilTo(14, 5) // 15
+ * (22)|ceilTo(5) // 25
+ * ceilTo(0.3, 0.25) // 0.5
+ * @group Math
+ *
+ * @param input The input number to round up.
+ * @param step The multiple to round up to.
+ * @returns The smallest multiple of step greater than or equal to input, or NaN if input cannot be converted to a number.
+ */
+export const ceilTo = (input: unknown, step: number) => {
+  const num = toNumber(input);
+  if (isNaN(num) || !step) return NaN;
+  return Math.ceil(num / step) * step;
+};
+
+/**
  * Returns the value of a number raised to a power.
  *
  * @example
