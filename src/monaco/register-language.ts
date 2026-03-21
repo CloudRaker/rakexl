@@ -103,7 +103,18 @@ export function registerJexlLanguage(monaco: any) {
           suggestions: transformItems.map((item) => ({ ...item, range })),
         };
       } else if (isAfterIdentifier) {
-        // After identifier: suggest operators and pipe
+        if (currentWord) {
+          // Mid-word: user could be typing a function name — show functions + keywords
+          const functionItems = createJexlCompletionItems(undefined, currentWord);
+          const keywordItems = createJexlKeywords();
+          return {
+            suggestions: [
+              ...functionItems.map((item) => ({ ...item, range })),
+              ...keywordItems.map((item) => ({ ...item, range })),
+            ],
+          };
+        }
+        // After completed identifier: suggest operators and pipe
         const operatorItems = createJexlOperators();
         return {
           suggestions: operatorItems.map((item) => ({ ...item, range })),
