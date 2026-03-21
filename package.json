@@ -39,7 +39,7 @@
     "filter",
     "selector"
   ],
-  "author": "Niko Raes <niko.raes@gmail.com>",
+  "author": "CloudRaker <devs@cloudraker.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cloudraker/rakexl.git"
