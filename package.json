@@ -1,6 +1,6 @@
 {
   "name": "@cloudraker/rakexl",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Rakexl - An opinionated extended grammar for Javascript Expression Language (JEXL)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
